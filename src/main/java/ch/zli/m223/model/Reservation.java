@@ -26,7 +26,7 @@ public class Reservation {
     private LocalDateTime endDate;
 
     @Column(nullable = false)
-    private Boolean status;
+    private String status;
 
     @OneToMany
     @Column(nullable = false)
@@ -57,11 +57,11 @@ public class Reservation {
         this.endDate = endDate;
     }
 
-    public Boolean getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
