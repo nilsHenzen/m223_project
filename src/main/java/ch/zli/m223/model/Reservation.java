@@ -1,4 +1,4 @@
-package ch.zli.m223.model;
+/**package ch.zli.m223.model;
 
 import java.time.LocalDateTime;
 
@@ -10,8 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
-@Entity
+ @Entity
 public class Reservation {
 
     @Id
@@ -74,3 +73,4 @@ public class Reservation {
     }
     
 }
+*/

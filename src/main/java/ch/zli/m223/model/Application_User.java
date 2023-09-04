@@ -8,9 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
-public class User {
+public class Application_User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(readOnly = true)
@@ -22,15 +24,18 @@ public class User {
     @Column(nullable = false)
     private String lastname;
 
-    @ManyToOne
-    @Column(nullable = false)
-    private String role;    
+    @ManyToOne(optional = false)
+    @Fetch(FetchMode.JOIN)
+    private Role role;
     
     @Column(nullable = false)
     private String email;
         
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    private String username;
 
 
     public Long getId() {
@@ -57,11 +62,11 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -79,6 +84,14 @@ public class User {
     
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUSername(String username) {
+        this.username = username;
     }
 
 }
