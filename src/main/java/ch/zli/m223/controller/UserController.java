@@ -36,7 +36,7 @@ public class UserController {
     @POST
     @Path("/login")
     @Operation(summary = "loggs user in", description = "Returns JWT-Token after successful login")
-    public Boolean login(@HeaderParam("Authorization") String authorizationHeader) {
+    public Response login(@HeaderParam("Authorization") String authorizationHeader) {
 
         String[] parts = authorizationHeader.split(":", 2);
         String username = parts[0];
@@ -48,9 +48,9 @@ public class UserController {
         String userpw = userinfos.getPassword();
 
         if (password.equals(userpw) ){
-            return true;
+            return Response.status(200, "correct").build();
         } else {
-            return false;
+            return Response.status(403, "wrong credentials").build();
         }
 
     }
