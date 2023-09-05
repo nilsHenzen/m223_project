@@ -1,4 +1,4 @@
-/**package ch.zli.m223.model;
+package ch.zli.m223.model;
 
 import java.time.LocalDateTime;
 
@@ -7,10 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
- @Entity
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+@Entity
 public class Reservation {
 
     @Id
@@ -27,9 +30,9 @@ public class Reservation {
     @Column(nullable = false)
     private String status;
 
-    @OneToMany
-    @Column(nullable = false)
-    private Long user_id;
+    @ManyToOne
+    @Fetch(FetchMode.JOIN)
+    private Application_User application_User;
 
 
     public Long getId() {
@@ -64,13 +67,12 @@ public class Reservation {
         this.status = status;
     }
 
-    public Long getUserId() {
-        return user_id;
+    public Application_User getUserId() {
+        return application_User;
     }
 
-    public void setUserId(Long user_id) {
-        this.user_id = user_id;
+    public void setUserId(Application_User application_User) {
+        this.application_User = application_User;
     }
     
 }
-*/
