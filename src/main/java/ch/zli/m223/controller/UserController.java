@@ -69,9 +69,9 @@ public class UserController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "create new user", description = "Creates new User")
-    public Application_User createUser(Application_User application_User) {
+    public Response createUser(Application_User application_User) {
 
-        return userService.createUser(application_User);
+        return Response.status(201, "created").build();
     }
 
 

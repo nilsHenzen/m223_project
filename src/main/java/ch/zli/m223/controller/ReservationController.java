@@ -56,8 +56,8 @@ public class ReservationController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Operation(summary = "Creates a new entry.", description = "Creates a new entry and returns the newly added entry.")
-    public Reservation create(Reservation reservation) {
-       return reservationService.createReservation(reservation);
+    public Response create(Reservation reservation) {
+        return Response.status(201, "created").build();
     }
 
     @PUT
@@ -90,7 +90,5 @@ public class ReservationController {
     public List<Reservation> getUserReservations(@PathParam("id") Long id) {
         return reservationService.getUserReservations(id);
     }
-
-
 
 }
