@@ -4,6 +4,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import java.util.List;
 
@@ -24,6 +25,27 @@ public class UserService {
         query.setParameter("username", username); 
 
         return query.getSingleResult();
+    }
+
+    @Transactional
+    public Application_User getUserById(Long id) {
+        return entityManager.find(Application_User.class, id);
+    }
+
+    @Transactional
+    public Application_User createUser(Application_User application_User) {
+        entityManager.persist(application_User);
+        return application_User;
+    }
+
+    @Transactional
+    public void updateUser(Application_User application_User) {
+        entityManager.merge(application_User);
+    }
+
+    @Transactional
+    public void deleteUser(Application_User application_User) {
+        entityManager.remove(application_User);
     }
 
 }
