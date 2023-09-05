@@ -34,6 +34,8 @@ public class Reservation {
     @Fetch(FetchMode.JOIN)
     private Application_User application_User;
 
+    @Column(nullable = false)
+    private String bemerkung;
 
     public Long getId() {
         return id;
@@ -75,4 +77,11 @@ public class Reservation {
         this.application_User = application_User;
     }
     
+    public String getBemerkung() {
+        return bemerkung;
+    }
+
+    public void setBemerkung(String bemerkung) {
+        this.bemerkung = bemerkung;
+    }
 }
