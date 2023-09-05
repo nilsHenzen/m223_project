@@ -50,7 +50,7 @@ public class UserController {
         if (password.equals(userpw) ){
             return Response.status(200, "correct").build();
         } else {
-            return Response.status(403, "wrong credentials").build();
+            return Response.status(404, "wrong credentials").build();
         }
 
     }
