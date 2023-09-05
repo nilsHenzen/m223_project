@@ -1,4 +1,4 @@
-# punch-clock Project
+#  Placesharing Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 

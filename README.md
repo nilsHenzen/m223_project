@@ -2,7 +2,7 @@
 Quarkus Applikation um ein Placesharing-System zu verwalten
 
 
-## Instalieren
+## Installieren
 1. Projekt in einem Folder öffnen.
 2. Instalation von Quarkus & Dev container extension in vs code.
 3. Docker starten
@@ -45,6 +45,9 @@ Tests für create & put funktionieren nicht, delete Tests nur 1x aufgrund der id
 Einige Endpoints nicht erstellt, waren überflüssig
 JWT-Token nicht verwendet, zeitlich zu knapp
 
+
+## Referenz
+basierend auf Punch clock projekt
 
 ## Repo
 `https://github.com/nilsHenzen/m223_project`
